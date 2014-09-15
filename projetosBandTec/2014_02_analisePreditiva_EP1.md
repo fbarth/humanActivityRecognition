@@ -21,7 +21,7 @@ O dataset que deverá ser utilizado neste estudo está no arquivo [../data/datas
 O que deve ser entregue
 -----------------------
 
-Cada equipe, composta com até 2 integrantes, deve entregar um relatório descrevendo:
+Cada equipe, composta com até 4 integrantes, deve entregar um relatório descrevendo:
 
 * Como os dados foram adquiridos e como os dados foram pré-processados;
 * A análise descritiva dos dados. Não é necessário apresentar toda a análise. Apenas apresente 
