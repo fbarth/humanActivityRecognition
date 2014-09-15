@@ -4,7 +4,7 @@ EP1: criando um classificador para um problema de _Human Activity Recognition_
 Contexto e objetivos
 --------------------
 
-O (grupo de pesquisa)[http://groupware.les.inf.puc-rio.br/har] da PUC-Rio, construiu um
+O [grupo de pesquisa](http://groupware.les.inf.puc-rio.br/har) da PUC-Rio, construiu um
 dataset com 5 classes (_sitting-down, standing-up, standing, walking and sitting_) coletando
 durante 8 horas atividades de 4 pessoas saudáveis. Os dados adquiridos são: idade, altura, peso,
 entre outras informações, incluindo dados de acelerômetros que estão presentes em equipamentos 
@@ -32,7 +32,10 @@ _ctree_.
 * Os resultados encontrados pelo classificador desenvolvido pela equipe e a comparação entre este
 classificador e os resultados apresentados no artigo citado acima.
 
-
 Prazo
 -----
+
+O prazo máximo para entrega do relatório é **29 de setembro de 2014**. No entanto, o acompanhamento
+da executação deste trabalho será diário. As equipes devem começar com a aquisição e pré-processamento
+dos dados no dia **15 de setembro de 2014** e as outras atividades devem acontecer nos dias seguintes.
 
