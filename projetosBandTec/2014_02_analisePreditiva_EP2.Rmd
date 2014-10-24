@@ -1,0 +1,36 @@
+EP2: comparando classificadores para o problema de _Human Activity Recognition_
+===============================================================================
+
+Contexto e objetivo
+-------------------
+
+Utilizando o mesmo dataset já utilizado no [EP1](../data/dataset-har-PUC-Rio-ugulino.csv),
+o objetivo deste estudo é comparar modelos desenvolvidos utilizando o algoritmo **ctree** e
+o algoritmo **randomForest**.
+
+Dataset
+-------
+
+O dataset que deverá ser utilizado neste estudo está no arquivo [../data/dataset-har-PUC-Rio-ugulino.csv](../data/dataset-har-PUC-Rio-ugulino.csv). Mais informações sobre o dataset podem ser obtidas em [../docs/2012.Ugulino.WearableComputing.HAR.Classifier.RIBBON.pdf](../docs/2012.Ugulino.WearableComputing.HAR.Classifier.RIBBON.pdf).
+
+O que deve ser entregue
+-----------------------
+
+Cada equipe, composta com até 4 integrantes, deve entregar um relatório descrevendo:
+
+* Como os dados foram adquiridos e como os dados foram pré-processados. O fluxo de tratamento
+de dados pode ser diferente dependendo que algoritmo de modelagem a equipe utilizar;
+* A análise descritiva dos dados. Não é necessário apresentar toda a análise. Apenas apresente 
+aquilo que é relevante para o relatório final, por exemplo, os principais padrões que contribuem
+para a construção do classificador.
+* Quais as etapas para construção do classificador e avaliação do classificador utilizando o algoritmo
+_ctree_ e o algoritmo _randomForest_.
+* Os resultados encontrados pelos classificadores desenvolvidos (resultado do ctree e do randomForest) pela equipe 
+e a comparação entre estes classificadores e os resultados apresentados no artigo citado acima.
+
+Prazo
+-----
+
+O prazo máximo para entrega do relatório é **03 de novembro de 2014**. Este trabalho deve ser desenvolvido
+durante a aula do dia 27 de outubro de 2014.
+
