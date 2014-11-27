@@ -1,14 +1,18 @@
 ---
-title: 'Reconhecimento de atividades humanas: caso 01'
+title: 'Reconhecimento de atividades humanas: cenário 01'
 author: "Fabricio J. Barth"
 date: "11/25/2014"
 output: html_document
 ---
 
-O objetivo deste trabalho e construir um classificador de atividades realizadas por pessoas a partir
-de informacoes coletadas de quatro acelerometros.
+Reconhecimento de atividades humanas: cenário 01
+================================================
 
-Aquisicao dos dados
+O objetivo deste trabalho é construir um classificador de atividades realizadas por pessoas a partir
+de informações coletadas de quatro acelerômetros localizados em lugares diferentes do
+corpo da pessoa.
+
+Aquisição dos dados
 -------------------
 
 ````{r}
@@ -21,7 +25,7 @@ prop.table(table(dataset$class))
 sum(is.na(dataset))
 ````
 
-Divisao entre conjunto de treinamento e testes
+Divisão entre conjunto de treinamento e testes
 ----------------------------------------------
 
 ```{r}
@@ -34,7 +38,7 @@ treinamento <- dataset[trainIndex,]
 teste <- dataset[-trainIndex,]
 ```
 
-Analise descritiva
+Análise descritiva
 ------------------
 
 ````{r}
@@ -79,7 +83,7 @@ plot(model, lty = c(1, 1, 1, 1, 1, 1),
 legend("top", c("OOB", "sitting", "sitting down", "standing", 
                 "standing up", "walking"), lty = c(1, 1, 1, 1, 1, 1), 
        lwd = c(2.5,2.5, 2.5,2.5, 2.5, 2.5), 
-       col = c("black", "red", "green", "yellow", "cyan", "purple"))
+       col = c("black", "red", "green", "blue", "cyan", "purple"))
 ```
 
 ```{r}
@@ -87,8 +91,8 @@ varImpPlot(model,
            main = "Importância dos atributos ao classificar as observações")
 ```
 
-Outro modelo utilizando apenas dados do acelerometro 1
-------------------------------------------------------
+Outro modelo utilizando apenas dados do acelerômetro localizado na cintura
+--------------------------------------------------------------------------
 
 ```{r}
 formula1 <- class ~ x1 + y1 + z1

@@ -1,0 +1,60 @@
+Reconhecimento de atividades humanas: cenário 02
+========================================================
+
+O objetivo deste trabalho é construir um classificador capaz de identificar a pessoa que está realizando determinado movimento a partir de informações coletadas de quatro acelerômetros localizados em lugares diferentes do corpo desta pessoa.
+
+Aquisição dos dados
+-------------------
+
+````{r}
+dataset <- read.csv("../data/dataset-har-PUC-Rio-ugulino.csv", sep=";")
+dim(dataset)
+table(dataset$user)
+prop.table(table(dataset$user))
+````
+
+Divisão entre conjunto de treinamento e testes
+----------------------------------------------
+
+```{r}
+library(caret)
+set.seed(1234)
+trainIndex <- createDataPartition(dataset$user, p = .6,
+                                  list = FALSE,
+                                  times = 1)
+treinamento <- dataset[trainIndex,]
+teste <- dataset[-trainIndex,]
+```
+
+Criando o modelo
+----------------
+
+```{r}
+library(randomForest)
+formula <- user ~ x1 + y1 + z1 + x2 + y2 + z2 + x3 + y3 + z3 + x4 + y4 + z4
+model <- randomForest(formula, data=treinamento, do.trace=100, importance=TRUE)
+model
+```
+
+```{r}
+plot(model, lty = c(1, 1, 1, 1, 1), 
+     main = "Erro estimado baseado na quantidade de árvores utilizadas")
+legend("top", c("OOB", "debora", "jose carlos", "katia", 
+                "wallace"), lty = c(1, 1, 1, 1, 1), 
+       lwd = c(2.5,2.5, 2.5,2.5, 2.5), 
+       col = c("black", "red", "green", "blue", "cyan"))
+```
+
+```{r}
+varImpPlot(model, 
+           main = "Importância dos atributos ao classificar as observações")
+```
+
+Validando o modelo com o conjunto de testes
+-------------------------------------------
+
+```{r}
+testPred <- predict(model, newdata = teste)
+t <- table(testPred, teste$user)
+confusionMatrix(t)
+```
