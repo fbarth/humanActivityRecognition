@@ -1,0 +1,46 @@
+Reconhecimento de atividades humanas: cenário 02
+========================================================
+
+O objetivo deste trabalho é construir um modelo capaz de identificar que atividade uma pessoa está realizando a partir de informações de acelerômetro e giroscópio presentes em um Samsung Galaxy II.
+
+Aquisição dos dados
+-------------------
+
+```{r}
+load("../data/samsungData.rda")
+names(samsungData) <- gsub("\\)","_",
+                        gsub("\\(","_",
+                          gsub(",","_",
+                            gsub("-","_",names(samsungData)))))
+samsungData$activity <- as.factor(samsungData$activity)
+```
+
+Separação dos dados em treinamento e teste
+------------------------------------------
+
+```{r}
+train <- subset(samsungData, samsungData$subject < 20)
+test <- subset(samsungData, samsungData$subject > 20)
+train$subject <- NULL
+test$subject <- NULL
+```
+
+Criando o modelo
+----------------
+
+```{r}
+library(randomForest)
+model <- randomForest(activity ~ ., data=train, importance=TRUE, do.trace=100)
+model
+```
+
+Validando o modelo no conjunto de teste
+---------------------------------------
+
+```{r}
+library(caret)
+testPred <- predict(model, newdata = test)
+t <- table(testPred, test$activity)
+confusionMatrix(t)
+```
+

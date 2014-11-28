@@ -21,3 +21,12 @@ Conference in Cooperation with SIGCHI (Augmented Human '13) .
 Stuttgart, Germany: ACM SIGCHI, 2013.
 
 Read more: http://groupware.les.inf.puc-rio.br/har#ixzz3DOYsHPOY 
+
+Para citar o uso do dataset
+samsungData.rda
+
+utilizar a seguinte referencia:
+
+Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
+
+Read more: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
